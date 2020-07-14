@@ -5,16 +5,15 @@ let votingAge = 18;
 console.log(votingAge >= 18);
 //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned
 //to a second variable (no function required)
+/*let message = "Good Luck";
+            let score = 0;
+            if (score >= 10) {
+              message = "You Win";
+            }*/
+for (let i = 0; i < 5; i++)
+  //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
 
-let score = 0;
-let screen = "Good Luck";
-if (score >= 10) {
-  screen = "You Win";
-}
-
-//Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
-
-Number("1999");
+  Number("1999");
 
 //Task d: Write a function to multiply a*b
 
@@ -154,14 +153,12 @@ function grade(num) {
 // Hint - you may need to study tomorrow's traning kit on arrays
 // try looking up the .includes() method
 
+function countingVowels(str) {
+  toUpperCase(str);
+}
+
 /************************************************************** Stretch **************************************************************/
 //Take Rock, Paper, Sissors further
 //update your rock papers sissors code below to take a prompt from a user using the window object
 
 let player = prompt("Rock, Paper, Or Scissors?");
-
-let score = 0;
-let message = "Good Luck";
-if (score >= 10) {
-  message = "You Win";
-}
