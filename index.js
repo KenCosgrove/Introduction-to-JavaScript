@@ -6,11 +6,10 @@ console.log(votingAge >= 18);
 //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned
 //to a second variable (no function required)
 
-let age = 18;
-if (age >= 18) {
-  console.log(true);
-} else {
-  console.log(false);
+let score = 0;
+let screen = "Good Luck";
+if (score >= 10) {
+  screen = "You Win";
 }
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
@@ -19,8 +18,8 @@ Number("1999");
 
 //Task d: Write a function to multiply a*b
 
-function multiply(num1, num2) {
-  return num1 * num2;
+function multiply(a, b) {
+  return a * b;
 }
 
 /************************************************************** Task 2 **************************************************************/
@@ -65,7 +64,7 @@ function feeding(age, weight) {
 // 7 - 12 months 4% of their body weight
 
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
-
+feeding(1, 15);
 /************************************************************** Task 4 **************************************************************/
 // Rock, Paper, Sissors
 // Your function should take a string (either rock paper or sissors)
@@ -73,16 +72,59 @@ function feeding(age, weight) {
 // use math.random to determine the computers choice
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number
 
+function RPS(str) {
+  let ai = Math.random();
+  if (ai < 0.333) {
+    ai = "rock";
+  } else if (ai < 0.666) {
+    ai = "paper";
+  } else if (ai < 1) {
+    ai = "scissors";
+  }
+
+  if (str === ai) {
+    console.log(`AI also threw ${str}, Tie Game!"`);
+  } else if (str === "rock" && ai === "scissors") {
+    console.log("AI threw scisors, You Win!");
+  } else if (str === "scissors" && ai === "paper") {
+    console.log("AI threw paper, You Win!");
+  } else if (str === "paper" && ai === "rock") {
+    console.log("AI threw rock, You Win!");
+  } else if (str === "paper" && ai === "scissors") {
+    console.log("AI threw scissors, You Lose!");
+  } else if (str === "rock" && ai === "paper") {
+    console.log("AI threw paper, You Lose!");
+  } else if (str === "scissors" && ai === "rock") {
+    console.log("AI threw rock , You Lose!");
+  }
+}
+
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
 
-//b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
+function kmToMiles(km) {
+  return km * 0.62137119224;
+}
 
+//b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
+function feetToCm(feet) {
+  return feet * 30.48;
+}
 /************************************************************** Task 6 **************************************************************/
 // 99 bottles of soda on the wall
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
+
+function annoyingSong(num) {
+  for (let i = num; i >= 1; i--) {
+    console.log(
+      `${i} bottles of soda on the wall ${i} bottles of soda take one down pass it around ${
+        i - 1
+      } bottles of soda on the wall`
+    );
+  }
+}
 
 /************************************************************** Task 7 **************************************************************/
 //Grade Calculator
@@ -93,6 +135,20 @@ function feeding(age, weight) {
 //60s should be D
 //and anything below 60 should be F
 
+function grade(num) {
+  if (num >= 90) {
+    return "A";
+  } else if (num >= 80) {
+    return "B";
+  } else if (num >= 70) {
+    return "C";
+  } else if (num >= 60) {
+    return "D";
+  } else if (num < 60) {
+    return "F";
+  }
+}
+
 /************************************************************** Stretch **************************************************************/
 //Create a function that counts the number of vowels within a string. It should handle both capitalized and uncapitalized vowels.
 // Hint - you may need to study tomorrow's traning kit on arrays
@@ -101,3 +157,11 @@ function feeding(age, weight) {
 /************************************************************** Stretch **************************************************************/
 //Take Rock, Paper, Sissors further
 //update your rock papers sissors code below to take a prompt from a user using the window object
+
+let player = prompt("Rock, Paper, Or Scissors?");
+
+let score = 0;
+let message = "Good Luck";
+if (score >= 10) {
+  message = "You Win";
+}
