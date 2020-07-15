@@ -152,13 +152,20 @@ function grade(num) {
 //Create a function that counts the number of vowels within a string. It should handle both capitalized and uncapitalized vowels.
 // Hint - you may need to study tomorrow's traning kit on arrays
 // try looking up the .includes() method
-
 function countingVowels(str) {
-  toUpperCase(str);
+  let newString = str.toUpperCase();
+  let vowels = "AEIOU";
+  let count = 0;
+  for (let i = 0; i < newString.length; i++) {
+    if (vowels.indexOf(newString[i]) !== -1) {
+      count += 1;
+    }
+  }
+  return count;
 }
 
 /************************************************************** Stretch **************************************************************/
 //Take Rock, Paper, Sissors further
 //update your rock papers sissors code below to take a prompt from a user using the window object
 
-let player = prompt("Rock, Paper, Or Scissors?");
+//let player = prompt("Rock, Paper, Or Scissors?");
